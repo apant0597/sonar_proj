@@ -1,0 +1,21 @@
+name: SonarAction
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/*'
+  workflow_dispatch:
+jobs:
+  sonar-job:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+     -  name: Code Checkout  
+        uses: actions/checkout@v4
+     -  name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v2.3.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
