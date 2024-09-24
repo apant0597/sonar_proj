@@ -1,4 +1,4 @@
-name: SonarAction
+name: SonarAction-SelfHosted
 on:
   push:
     branches:
