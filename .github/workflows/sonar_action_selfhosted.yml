@@ -9,7 +9,7 @@ on:
 jobs:
   sonar-job:
     environment: test
-    runs-on: sonarqube
+    runs-on: self-hosted
     steps:
      -  name: Code Checkout  
         uses: actions/checkout@v4
